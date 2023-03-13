@@ -1,6 +1,6 @@
 package com.yangzm.auth.domain;
 
-import com.yangzm.common.domain.UserDTO;
+import com.yangzm.domain.UserDTO;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

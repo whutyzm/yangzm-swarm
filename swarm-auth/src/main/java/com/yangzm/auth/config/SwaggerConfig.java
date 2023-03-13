@@ -1,7 +1,7 @@
 package com.yangzm.auth.config;
 
-import com.yangzm.common.config.BaseSwaggerConfig;
-import com.yangzm.common.domain.SwaggerProperties;
+import com.yangzm.config.BaseSwaggerConfig;
+import com.yangzm.domain.SwaggerProperties;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

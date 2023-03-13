@@ -2,8 +2,8 @@ package com.yangzm.auth.service;
 
 import com.yangzm.auth.constants.MessageConstant;
 import com.yangzm.auth.domain.SecurityUser;
-import com.yangzm.common.constants.AuthConstant;
-import com.yangzm.common.domain.UserDTO;
+import com.yangzm.constants.AuthConstant;
+import com.yangzm.domain.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AccountExpiredException;
 import org.springframework.security.authentication.CredentialsExpiredException;

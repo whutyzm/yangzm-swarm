@@ -2,7 +2,7 @@ package com.yangzm.auth.config;
 
 import com.yangzm.auth.component.JwtTokenEnhancer;
 import com.yangzm.auth.service.UserServiceImpl;
-import com.yangzm.common.constants.AuthConstant;
+import com.yangzm.constants.AuthConstant;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

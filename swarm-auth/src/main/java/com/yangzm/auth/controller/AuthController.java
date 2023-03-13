@@ -1,8 +1,8 @@
 package com.yangzm.auth.controller;
 
 import com.yangzm.auth.domain.Oauth2TokenDTO;
-import com.yangzm.common.api.CommonResult;
-import com.yangzm.common.constants.AuthConstant;
+import com.yangzm.api.CommonResult;
+import com.yangzm.constants.AuthConstant;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;

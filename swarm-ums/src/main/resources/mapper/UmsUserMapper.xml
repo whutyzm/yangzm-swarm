@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yangzm.ums.mapper.UmsUserMapper">
 
-    <resultMap id="BaseResultMap" type="com.yangzm.ums.domain.UmsUser">
+    <resultMap id="BaseResultMap" type="com.yangzm.domain.UmsUser">
             <id property="id" column="id" jdbcType="BIGINT"/>
             <result property="username" column="username" jdbcType="VARCHAR"/>
             <result property="password" column="password" jdbcType="VARCHAR"/>

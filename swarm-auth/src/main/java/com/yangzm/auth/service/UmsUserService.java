@@ -1,6 +1,6 @@
 package com.yangzm.auth.service;
 
-import com.yangzm.common.domain.UserDTO;
+import com.yangzm.domain.UserDTO;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
