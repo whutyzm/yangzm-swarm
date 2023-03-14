@@ -13,6 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @FeignClient("swarm-ums")
 public interface UmsUserService {
-    @GetMapping("/ums/loadByUsername")
+    @GetMapping("/user/loadByUsername")
     UserDTO loadUserByUsername(@RequestParam String username);
 }

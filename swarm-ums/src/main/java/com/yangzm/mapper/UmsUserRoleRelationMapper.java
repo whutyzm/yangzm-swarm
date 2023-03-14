@@ -14,6 +14,11 @@ import java.util.List;
 * @Entity com.yangzm.ums.domain.UmsUserRoleRelation
 */
 public interface UmsUserRoleRelationMapper extends BaseMapper<UmsUserRoleRelation> {
+    /**
+     * 根据查询角色列表
+     * @param userId
+     * @return
+     */
     List<UmsRole> getRoleListByUserId(@Param("userId") Long userId);
 }
 
