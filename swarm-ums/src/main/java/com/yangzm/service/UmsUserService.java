@@ -1,5 +1,6 @@
 package com.yangzm.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yangzm.api.CommonResult;
 import com.yangzm.domain.UserDTO;
 import com.yangzm.domain.UmsUser;
@@ -18,4 +19,6 @@ public interface UmsUserService extends IService<UmsUser> {
     UmsUser register(UmsUserRegisterDTO umsUserRegisterDTO);
 
     CommonResult login(String username, String password);
+
+    Page<UmsUser> pageByKeyword(String keyword, Integer pageSize, Integer pageNum);
 }

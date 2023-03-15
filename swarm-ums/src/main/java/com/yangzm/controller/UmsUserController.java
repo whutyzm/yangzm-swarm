@@ -1,5 +1,6 @@
 package com.yangzm.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yangzm.api.CommonResult;
 import com.yangzm.domain.UserDTO;
 import com.yangzm.domain.UmsUser;
@@ -40,6 +41,23 @@ public class UmsUserController {
     @ResponseBody
     public CommonResult login(@Validated @RequestBody UmsUserLoginDTO umsUserLoginDTO) {
         return umsUserService.login(umsUserLoginDTO.getUsername(),umsUserLoginDTO.getPassword());
+    }
+
+    @ApiOperation(value = "分页条件查询用户列表")
+    @RequestMapping(value = "/page", method=RequestMethod.POST)
+    @ResponseBody
+    public CommonResult<Page<UmsUser>> page(@RequestParam(value = "keyword", required = false) String keyword,
+                                            @RequestParam(value = "pageSize", defaultValue = "5") Integer pageSize,
+                                            @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
+        Page<UmsUser> list = umsUserService.pageByKeyword(keyword, pageSize, pageNum);
+        return CommonResult.success(list);
+    }
+
+    @ApiOperation(value = "用户登出")
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult logout() {
+        return CommonResult.success(null);
     }
 
     @ApiOperation("根据用户名获取通用用户信息")

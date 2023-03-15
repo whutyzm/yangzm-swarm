@@ -18,7 +18,7 @@ public class SwaggerConfig extends BaseSwaggerConfig {
     @Override
     public SwaggerProperties swaggerProperties() {
         return SwaggerProperties.builder()
-                .apiBasePackage("com.yangzm.ums.controller")
+                .apiBasePackage("com.yangzm.controller")
                 .title("用户管理后台")
                 .description("用户管理后台相关接口文档")
                 .contactName("yangzm")

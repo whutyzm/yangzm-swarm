@@ -5,6 +5,7 @@ import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.digest.BCrypt;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.yangzm.api.CommonResult;
 import com.yangzm.api.ResultCode;
@@ -93,8 +94,23 @@ public class UmsUserServiceImpl extends ServiceImpl<UmsUserMapper, UmsUser>
         return restResult;
     }
 
+    @Override
+    public Page<UmsUser> pageByKeyword(String keyword, Integer pageSize, Integer pageNum) {
+        Page<UmsUser> page = new Page<>(pageNum, pageSize);
+
+        if (StrUtil.isNotEmpty(keyword)) {
+            QueryWrapper<UmsUser> queryWrapper = new QueryWrapper<>();
+            queryWrapper.lambda()
+                    .like(UmsUser::getUsername, keyword)
+                    .or()
+                    .like(UmsUser::getNickName, keyword);
+            return this.page(page, queryWrapper);
+        }
+        return this.page(page);
+    }
+
     private void insertLoginLog(String username) {
-        //TODO
+        //
         QueryWrapper<UmsUser> queryWrapper = new QueryWrapper<>();
         queryWrapper.lambda().eq(UmsUser::getUsername, username);
         UmsUser user = this.getOne(queryWrapper);
