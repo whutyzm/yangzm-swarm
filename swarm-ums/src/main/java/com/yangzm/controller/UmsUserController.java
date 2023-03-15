@@ -53,6 +53,37 @@ public class UmsUserController {
         return CommonResult.success(list);
     }
 
+    @ApiOperation("获取指定用户信息")
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public CommonResult<UmsUser> getUserDetailById(@PathVariable Long id) {
+        UmsUser user = umsUserService.getById(id);
+        return CommonResult.success(user);
+    }
+
+    @ApiOperation("修改用户信息")
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult update(@RequestBody UmsUser umsUser) {
+        boolean result = umsUserService.updateById(umsUser);
+        if (result) {
+            return CommonResult.success(result);
+        } else {
+            return CommonResult.failed();
+        }
+    }
+
+    @ApiOperation("删除指定用户信息")
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
+    @ResponseBody
+    public CommonResult delete(@PathVariable Long id) {
+        boolean result = umsUserService.removeById(id);
+        if (result) {
+            return CommonResult.success(result);
+        }
+        return CommonResult.failed();
+    }
+
     @ApiOperation(value = "用户登出")
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     @ResponseBody

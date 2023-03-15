@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.util.Date;
+
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
@@ -22,33 +24,24 @@ public class UmsRole implements Serializable {
     private Long id;
 
     /**
-     * 名称
+     *
      */
+    @ApiModelProperty("名称")
     private String name;
 
-    /**
-     * 描述
-     */
+    @ApiModelProperty("描述")
     private String description;
 
-    /**
-     * 后台用户数量
-     */
+    @ApiModelProperty("后台用户数量")
     private Integer userCount;
 
-    /**
-     * 创建时间
-     */
+    @ApiModelProperty("创建时间")
     private Date createTime;
 
-    /**
-     * 启用状态：0->禁用；1->启用
-     */
+    @ApiModelProperty("启用状态：0->禁用；1->启用")
     private Integer status;
 
-    /**
-     * 
-     */
+    @ApiModelProperty("预留排序字段")
     private Integer sort;
 
     @TableField(exist = false)

@@ -1,5 +1,6 @@
 package com.yangzm.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yangzm.domain.UmsResource;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -10,4 +11,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface UmsResourceService extends IService<UmsResource> {
 
+    boolean saveOrEdit(UmsResource umsResource);
+
+    Page<UmsResource> pageByKeyword(Long categoryId, String nameKeyword, String urlKeyword, Integer pageNum, Integer pageSize);
 }

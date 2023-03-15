@@ -10,4 +10,10 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface UmsResourceCategoryService extends IService<UmsResourceCategory> {
 
+    /**
+     * 新增或编辑资源分类
+     * @param umsResourceCategory
+     * @return
+     */
+    boolean saveOrEdit(UmsResourceCategory umsResourceCategory);
 }
